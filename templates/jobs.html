@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Scraper Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Job Listings</h1>
+    <ul>
+        {% for job in jobs %}
+        <li>
+            <strong>{{ job.title }}</strong> at {{ job.company }} ({{ job.location }})  
+            <a href="{{ job.link }}" target="_blank">Apply</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
